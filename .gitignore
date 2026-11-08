@@ -1,0 +1,61 @@
+# ---- Large or non-redistributable artefacts: never commit (see data/README.md) ----
+# Audio corpora, codec tokens, checkpoints and raw run output live outside git.
+# Experiment folders keep pointers + checksums to them instead.
+/corpus/
+/artifacts/
+/runs/
+/checkpoints/
+/outputs/
+/wandb/
+/mlruns/
+**/tensorboard/
+**/*.ckpt
+**/*.safetensors
+**/*.bin
+**/*.pt
+**/*.pth
+**/*.gguf
+**/*.npy
+**/*.npz
+**/*.arrow
+**/*.parquet
+**/*.wav
+**/*.flac
+# Voice-cloning prompts can carry a real person's voice
+**/*.spk
+**/*.icl
+
+# Listening samples are the one exception: small compressed clips inside an experiment
+!experiments/*/samples/*.ogg
+!experiments/*/samples/*.mp3
+!report/figures/**
+
+# ---- Secrets ----
+.env
+.env.*
+!.env.example
+**/secrets/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.python-version
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# ---- Node (report site, studio UI) ----
+node_modules/
+dist/
+.astro/
+.next/
+
+# ---- OS / editors ----
+.DS_Store
+.idea/
+.vscode/
+*.swp
