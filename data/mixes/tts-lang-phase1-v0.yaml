@@ -1,0 +1,53 @@
+# Phase 1 (language / accent adaptation) mix, as described in the blueprint §3.1.
+# Status: proposed. Numbers are blueprint/brief figures, not verified in this repo.
+name: tts-lang-phase1
+version: 0
+status: proposed
+purpose: Teach HK pronunciation, conversational rhythm and code-switching; 100% HK speakers; 0% CV yue.
+manifest_schema: 0.1.0
+
+global_filters:
+  min_duration_s: 3.0       # = 36 frames at 12 Hz (Qwen3-TTS-Tokenizer-12Hz)
+  max_duration_s: 25.0
+  accent_in: [zh-HK-native, zh-HK-likely]
+  split: train
+  min_snr_db: null
+  min_colloquial_score: null
+
+sources:
+  - source: hk-youtube-conversational
+    manifest: null          # TODO (P1): locate existing 13,023-clip / 96.3 h manifest
+    manifest_sha256: null
+    weight: 1.0
+    hours_cap: null
+    per_speaker_hours_cap: null   # TODO: decide after per-speaker stats
+    filters: {}
+  - source: cv-zh-hk
+    manifest: null
+    manifest_sha256: null
+    weight: 1.0
+    hours_cap: null
+    per_speaker_hours_cap: null
+    filters: {}
+  - source: mdcc
+    manifest: null
+    manifest_sha256: null
+    weight: 1.0
+    hours_cap: null
+    per_speaker_hours_cap: null
+    filters: {}
+
+# Not in the blueprint's phase-1 list, but a strong candidate given the code-switching goal.
+# Adding it is an experiment of its own (one change against the phase-1 baseline).
+candidates:
+  - source: mce
+
+excluded_sources:
+  - source: cv-yue
+    reason: non-HK accent majority; causes PRD accent
+
+built:
+  experiment: null
+  hours: null
+  clips: null
+  speakers: null
