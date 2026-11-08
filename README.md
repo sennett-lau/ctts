@@ -20,13 +20,13 @@ Layer 2  Per-model adaptation recipes        recipes/ base-models/ experiments/
 Layer 3  Voice / emotion control API + UI    (later; see docs/roadmap.md)
 ```
 
-The rationale is spread across the decision records in [`docs/decisions/`](docs/decisions/).
+The full rationale is in [`docs/initial/HK_CANTONESE_SPEECH_BLUEPRINT.md`](docs/initial/HK_CANTONESE_SPEECH_BLUEPRINT.md).
 
 ## Repository map
 
 | Path | What lives there |
 |---|---|
-| [`docs/initial/`](docs/initial/) | Note on the internal source documents (kept private, not in this repo). |
+| [`docs/initial/`](docs/initial/) | Source documents (blueprint, agent brief). Frozen; never edited. |
 | [`docs/roadmap.md`](docs/roadmap.md) | Phases and current status. **Start here to see progress.** |
 | [`docs/methodology/`](docs/methodology/) | How we work: logging standard, evaluation protocol, porting to a new base model. |
 | [`docs/decisions/`](docs/decisions/) | Architecture/decision records (ADRs): why we chose X over Y. |

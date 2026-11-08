@@ -2,7 +2,7 @@
 
 - **Status:** accepted
 - **Date:** 2026-11-08
-- **Related:** internal blueprint §1–2 (private; see `docs/initial/README.md`)
+- **Related:** `docs/initial/HK_CANTONESE_SPEECH_BLUEPRINT.md` §1–2
 
 ## Context
 Base models turn over every few months. Earlier work spent most of its effort on data
