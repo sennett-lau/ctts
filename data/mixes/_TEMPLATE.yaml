@@ -1,0 +1,33 @@
+# Data mix template. Copy to <name>.yaml. Never edit a mix after an experiment has used it.
+name: <mix-name>
+version: 0
+status: proposed            # proposed | built | used | retired
+purpose: <one line: what this mix is for>
+manifest_schema: 0.1.0
+
+global_filters:
+  min_duration_s: 3.0       # re-derive per tokenizer frame rate (see porting checklist)
+  max_duration_s: 25.0
+  accent_in: [zh-HK-native, zh-HK-likely]
+  split: train
+  min_snr_db: null
+  min_colloquial_score: null
+
+sources:
+  - source: <data card slug>
+    manifest: <path relative to corpus root>
+    manifest_sha256: null   # filled when built
+    weight: 1.0             # sampling weight, or use hours_cap
+    hours_cap: null         # per epoch
+    per_speaker_hours_cap: null
+    filters: {}             # source-specific overrides
+
+excluded_sources:
+  - source: cv-yue
+    reason: non-HK accent majority; causes PRD accent (data/sources/cv-yue-EXCLUDED.md)
+
+built:                      # filled by the build experiment
+  experiment: null
+  hours: null
+  clips: null
+  speakers: null
