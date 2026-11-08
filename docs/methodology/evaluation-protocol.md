@@ -54,10 +54,15 @@ Every experiment also renders the same fixed **listening prompts** into `samples
 }
 ```
 
+## Inference & Long-Form Chunking Rules
+
+1. **Punctuation chunking (`max_chars = 42`):** Autoregressive codec TTS models (`Qwen3-TTS-12Hz`) skip entire clauses when fed >65–70 characters in a single forward pass. For `long_form` evaluation, the harness must split paragraphs at punctuation (`，。！？；：`) into chunks of $\le 42$ characters, synthesise each chunk with identical sampling parameters, and concatenate the resulting waveforms before computing round-trip CER.
+2. **Sampling discipline:** Never evaluate codec-AR TTS models with greedy decoding (`temperature = 0.0`), which triggers runaway repetition loops. Use the model's standard stochastic settings (`temperature = 0.9, top_k = 50, top_p = 1.0, repetition_penalty = 1.05`) with a fixed, recorded random seed per draw (and average over 2 draws per prompt).
+
 ## Baselines (required before any fine-tune claim)
 
 For every base model: score the **untouched** model on the current test set first. Make that its own
-experiment, `E####_<base>_baseline`. Every fine-tune is reported as a change from that baseline.
+experiment, `E####_<base>_baseline`. Every fine-tune is reported as a change from that baseline. Also score `jmtl/hk-cantonese-cc0-qwen3-tts` (v0.0.5) as an external community reference (`E0002_qwen3tts12hz_jmtl-v005-ref`).
 
 ## Changelog
 

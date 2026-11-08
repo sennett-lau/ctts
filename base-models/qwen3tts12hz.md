@@ -29,8 +29,16 @@ actual checkpoint, and record them here.
 **Keep `speaker_encoder.*` (and `code_predictor`) at export.** A previous third-party fine-tune
 (`jmtl`) deleted them and lost cloning. It also trained on CV `yue` and got a PRD accent.
 
+## Language Token ID & Operational Constraints
+- **Language ID strategy (critical ablation):**
+  - Upstream `config.json` maps `chinese -> 2055`, `english -> 2050`, etc., with no dedicated `cantonese` ID.
+  - **Option A (`jmtl` style):** Train under `language_id = 2055` (`chinese`) so the LoRA adapter shifts `chinese` to Hong Kong Cantonese.
+  - **Option B (`hon9kon9ize` style):** Inject `cantonese -> 2072` into `config.json` and initialize `codec_embedding` row `2072` from row `2055`, keeping Mandarin (`2055`) intact while dedicating `2072` to pure Hong Kong Cantonese.
+- **Chunk ceiling (<= 42–45 characters):** At >= 70 characters without punctuation splitting, the 12 Hz Talker skips whole clauses. Always split long text at punctuation (`，。！？；：`) into chunks of <= 42 characters during both inference and evaluation (`long_form`).
+- **Sampling constraints:** Keep stochastic sampling (`temperature = 0.9, top_k = 50, top_p = 1.0, repetition_penalty = 1.05`). Greedy decoding (`temperature = 0`) and very low temperatures cause runaway codec loops.
+
 ## Inference runtime
-`qwen3-tts.cpp` (`libqwen3_tts_shared.so`) is relevant for Layer 3 and for RTF/TTFA. Record which runtime each metric used.
+`qwen3-tts.cpp` (commit `16bb5afcd06311031c72a8488f8d59660dc2fb46`, compiled as `libqwen3_tts_shared.so`) is used for Layer 3 and for RTF/TTFA benchmarking. Record which runtime (PyTorch BF16 vs `qwen3-tts.cpp` Q8_0) each metric used.
 
 ## Experiments
 | ID | What | Result |

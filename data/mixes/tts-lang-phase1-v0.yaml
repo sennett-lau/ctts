@@ -11,36 +11,40 @@ global_filters:
   max_duration_s: 25.0
   accent_in: [zh-HK-native, zh-HK-likely]
   split: train
-  min_snr_db: null
+  min_snr_db: 15.0
+  min_single_speaker_sim: 0.75   # Reject multi-speaker interview turns (crucial for Mill MILK / DoShow / BBO / Chong)
+  require_no_digits: true
   min_colloquial_score: null
 
 sources:
   - source: hk-youtube-conversational
-    manifest: null          # TODO (P1): locate existing 13,023-clip / 96.3 h manifest
-    manifest_sha256: null
+    manifest: "data_yue/manifests/yt_train.jsonl"
+    manifest_sha256: "94ca6f5dc17fb7316316595faef0c4795fb5c56f5e5fcf0aba535112a4d01174"
     weight: 1.0
     hours_cap: null
-    per_speaker_hours_cap: null   # TODO: decide after per-speaker stats
+    per_speaker_hours_cap: 15.0
     filters: {}
   - source: cv-zh-hk
-    manifest: null
+    manifest: "data_yue/manifests/cvhk_train.jsonl"
     manifest_sha256: null
     weight: 1.0
     hours_cap: null
     per_speaker_hours_cap: null
     filters: {}
   - source: mdcc
-    manifest: null
+    manifest: "data_yue/manifests/mdcc_train.jsonl"
     manifest_sha256: null
     weight: 1.0
     hours_cap: null
     per_speaker_hours_cap: null
     filters: {}
-
-# Not in the blueprint's phase-1 list, but a strong candidate given the code-switching goal.
-# Adding it is an experiment of its own (one change against the phase-1 baseline).
-candidates:
   - source: mce
+    manifest: "data_yue/manifests/mce_train.jsonl"
+    manifest_sha256: null
+    weight: 1.0
+    hours_cap: null
+    per_speaker_hours_cap: null
+    filters: {}
 
 excluded_sources:
   - source: cv-yue

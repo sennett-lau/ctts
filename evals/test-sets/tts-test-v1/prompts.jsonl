@@ -1,0 +1,35 @@
+{"id": "col-001", "category": "colloquial", "text": "今日天氣咁好，不如我哋陣間出去飲杯咖啡，順便行下街啦。", "notes": "Everyday HK greeting and invitation"}
+{"id": "col-002", "category": "colloquial", "text": "我尋晚捱夜睇波睇到三點幾，而家眼瞓到連隻眼都擘唔大。", "notes": "Colloquial verbs 捱夜, 眼瞓, 擘唔大"}
+{"id": "col-003", "category": "colloquial", "text": "呢間茶餐廳個沙爹牛肉麵真係幾好食，不過凍檸茶就甜咗少少。", "notes": "HK food register"}
+{"id": "col-004", "category": "colloquial", "text": "你唔好成日將啲嘢擺到亂七八糟啦，執返乾淨張枱先開工好冇？", "notes": "Household colloquial"}
+{"id": "col-005", "category": "colloquial", "text": "如果搭的士嘅話可以瞓多四個字，但係成個月計落條數都幾甘。", "notes": "HK time idiom 四個字 (20 mins) and 幾甘"}
+{"id": "prt-001", "category": "particles", "text": "你估我真係好得閒咩？我都係順手幫你執埋佢㗎咋！", "notes": "Clustered particles 咩, 㗎咋"}
+{"id": "prt-002", "category": "particles", "text": "係囉，我都話咗呢個方法行唔通㗎啦，你又唔信我講喎。", "notes": "Particles 囉, 㗎啦, 喎"}
+{"id": "prt-003", "category": "particles", "text": "車，咁少事就唔使特登走過嚟問我啦，你自己決定咪得囉！", "notes": "Exclamation 車 + 咪得囉"}
+{"id": "prt-004", "category": "particles", "text": "咦？乜你仲未食飯咩？不如我叫外賣順便叫埋你嗰份吖。", "notes": "Rising question 咦/咩 + 吖"}
+{"id": "prt-005", "category": "particles", "text": "嗱，今次算數啦，下次真係唔好再漏低銀包喺屋企喇喎！", "notes": "Discourse marker 嗱 + 喇喎"}
+{"id": "cs-001", "category": "code_switch", "text": "其實 Variational Autoencoder 最核心嘅概念呢，就係將張圖壓入去一個連續嘅 latent space 入面。", "notes": "Project Sunset ML tutor sentence"}
+{"id": "cs-002", "category": "code_switch", "text": "你 push 之前記得先喺 local 跑一次 unit test 同埋 typecheck，費事一陣 CI 又爆紅。", "notes": "Software engineering code-switch"}
+{"id": "cs-003", "category": "code_switch", "text": "呢個 endpoint 已經做咗 streaming output，所以 time to first audio 可以壓到好低。", "notes": "Speech engineering code-switch"}
+{"id": "cs-004", "category": "code_switch", "text": "既然 office 有免費咖啡，at least 可以幫我每個禮拜慳返幾百蚊先啦。", "notes": "Everyday HK office code-switch"}
+{"id": "cs-005", "category": "code_switch", "text": "如果我哋凍住個 speaker encoder 再做 LoRA fine-tuning，就唔會整爛原本個 voice cloning 功能。", "notes": "CTTS domain code-switch"}
+{"id": "num-001", "category": "numbers_dates", "text": "我哋約咗下個禮拜三下晝三點半，喺地鐵站個客務中心等啦。", "notes": "Spoken time and day of week"}
+{"id": "num-002", "category": "numbers_dates", "text": "呢部新出嘅手提電腦賣緊一萬二千八百蚊，不過用學生優惠可以平返九百五。", "notes": "Spoken HKD prices"}
+{"id": "num-003", "category": "numbers_dates", "text": "經過呢一輪優化之後，中英夾雜嘅錯字率由十一點七個 percent 大幅跌到去五點六。", "notes": "Spoken decimals and percent"}
+{"id": "num-004", "category": "numbers_dates", "text": "喺二零二六年十一月八號朝早，我哋終於跑完晒全部七個測試集。", "notes": "Spoken year and date"}
+{"id": "num-005", "category": "numbers_dates", "text": "呢個訓練集總共有九十六個鐘頭零二十分鐘，入面包含咗一萬三千幾條錄音。", "notes": "Duration and counts"}
+{"id": "nam-001", "category": "names_places", "text": "陣間收工我要先由中環搭地鐵去旺角攞嘢，跟住再轉車返將軍澳食晚飯。", "notes": "HK districts and MTR"}
+{"id": "nam-002", "category": "names_places", "text": "禮拜日銅鑼灣同尖沙咀都好多人，不如我哋改去大埔海濱公園踩單車仲好啦。", "notes": "HK landmarks"}
+{"id": "nam-003", "category": "names_places", "text": "如果你由觀塘過海去鰂魚涌返工，朝早繁忙時間月台真係會迫到爆。", "notes": "HK commuter locations"}
+{"id": "nam-004", "category": "names_places", "text": "聽講西九文化區嗰邊新開咗間展覽館，週末好多人都特登過去影相打卡。", "notes": "West Kowloon"}
+{"id": "nam-005", "category": "names_places", "text": "無論係深水埗買電腦配件，定係去赤柱吹海風，都有完全唔同嘅香港味道。", "notes": "Sham Shui Po & Stanley"}
+{"id": "lng-001", "category": "long_form", "text": "好多人問點解公開嗰啲廣東話語音模型聽落總係有陣鄉音，其實最主要嘅原因係佢哋用咗未經篩選嘅大眾語音庫，入面超過九成半嘅錄音都唔係香港本地人講㗎，而且全部都係對住個螢幕死氣沉沉咁朗讀書面語，自然就學唔到香港人平時傾偈嗰種抑揚頓挫同埋尾音助詞啦。", "notes": "Long multi-clause paragraph (must be chunked <=42 chars at punctuation)"}
+{"id": "lng-002", "category": "long_form", "text": "當我哋設計一個可以用語音教書嘅人工智能導師嗰陣，最重要嘅係唔好令學生覺得要等好耐先有反應，所以系統會喺生成頭幾個字去到第一個逗號嗰陣，就即刻將短句送去流式語音合成引擎度邊合邊播，同時喺背景靜靜雞將重點整理成筆記。", "notes": "Long technical explanation paragraph"}
+{"id": "lng-003", "category": "long_form", "text": "好多時後生仔啱啱出嚟社會做嘢，都會覺得每個月儲錢好辛苦，但係累積財富其實就好似喺山坡上面碌雪球咁樣，最開頭嗰陣你當然要用好多力氣先推得郁個雪球，不過只要你堅持落去等個雪球夠大夠重，佢就會自己越碌越快。", "notes": "Long storytelling analogy paragraph"}
+{"id": "lng-004", "category": "long_form", "text": "為咗測試呢個模型對中英夾雜同埋長句子嘅穩定程度，我哋特登準備咗呢段超過一百個字嘅測試文章，睇下個解碼器喺連續生成幾十秒錄音嘅過程入面，會唔會出現跳句、吞字、語速突然變快，或者喺句尾出現重複死循環嘅問題。", "notes": "Long stability stress-test paragraph"}
+{"id": "lng-005", "category": "long_form", "text": "以前想換一個模型講嘢把聲，往往要重新收集幾個鐘頭嘅錄音再跑成晚訓練先至搞得掂，但係而家只要喺訓練階段保留返個聲紋編碼器，用家隨時上傳一段五秒鐘嘅清音樣本，系統就可以即時抽出聲紋兼且連說話嘅情緒節奏都一齊複製過嚟。", "notes": "Long voice-cloning explanation paragraph"}
+{"id": "qex-001", "category": "questions_exclamations", "text": "嘩！唔係啩？原來淨係改咗呢兩行設定，個推理速度即刻快咗成倍咁多？", "notes": "Surprise + rhetorical question"}
+{"id": "qex-002", "category": "questions_exclamations", "text": "喂！你仲唔快啲起身出門口？再唔行就真係趕唔切班車㗎喇！", "notes": "Urgent exclamation"}
+{"id": "qex-003", "category": "questions_exclamations", "text": "咦，點解呢度個數值會突然間跌咗落零嘅？係咪個配置檔寫錯咗名呀？", "notes": "Puzzled debugging question"}
+{"id": "qex-004", "category": "questions_exclamations", "text": "太好喇！跑咗成晚終於見到全部七個測試集都破晒紀錄，真係辛苦晒大家！", "notes": "Celebratory exclamation"}
+{"id": "qex-005", "category": "questions_exclamations", "text": "哼，你估我真係咁得閒陪你喺度慢慢試咩？快啲揀定用邊個方案啦！", "notes": "Tsundere / playful exasperation"}

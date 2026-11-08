@@ -19,6 +19,8 @@
     "style_tag": { "type": ["string", "null"], "description": "e.g. conversational_natural, read_studio, storytelling, formal_speech." },
     "emotion_tags": { "type": "array", "items": { "type": "string" }, "description": "Optional acoustic/emotion labels, e.g. calm, animated, questioning." },
     "snr_db": { "type": ["number", "null"] },
+    "single_speaker_sim": { "type": ["number", "null"], "description": "Cosine similarity between first-half and second-half speaker embeddings (ECAPA/WavLM). TTS training requires >= 0.75 to reject multi-speaker turns." },
+    "has_digits": { "type": ["boolean", "null"], "description": "True if text_verbatim_hk still contains Arabic digits (0-9). TTS training rows must have all numbers expanded to spoken Cantonese/English words." },
     "source": { "type": "string", "description": "Slug of the data card in data/sources/." },
     "split": { "type": "string", "enum": ["train", "dev", "test", "holdout"] },
     "language_mix": { "type": ["string", "null"], "enum": ["yue", "yue+en", null], "description": "Whether the clip code-switches into English." },

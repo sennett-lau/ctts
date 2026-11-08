@@ -1,0 +1,10 @@
+﻿col-001
+col-005
+prt-001
+cs-001
+cs-005
+num-003
+nam-001
+lng-001
+lng-002
+qex-005
