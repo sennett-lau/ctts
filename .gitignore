@@ -30,6 +30,10 @@
 !experiments/*/samples/*.mp3
 !report/figures/**
 
+# ---- Internal material kept off the public repo (local only) ----
+# Source documents, channel maps, host notes. See docs/initial/README.md.
+/private/
+
 # ---- Secrets ----
 .env
 .env.*

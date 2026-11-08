@@ -9,8 +9,10 @@ by-product. The real output is the record: which data, which cleaning, which rec
 and which failures. Someone must be able to switch to a new base model and repeat the work from
 this repo alone. Later the record becomes a research-paper-style report (`report/`).
 
-The background is in `docs/initial/`: the blueprint and the agent task brief. They are frozen
-source documents. Never edit them. When reality differs from them, write a decision record
+The background comes from two internal source documents (a blueprint and an agent task brief).
+They are **not in this public repo**. Maintainers keep them in the git-ignored `private/initial/`
+(see `docs/initial/README.md`). Never edit them, and never copy their contents back into
+tracked files wholesale. When reality differs from them, write a decision record
 (`docs/decisions/`) and update the living docs.
 
 ## Scope
