@@ -14,7 +14,7 @@
     "duration_s": { "type": "number", "exclusiveMinimum": 0 },
     "text_verbatim_hk": { "type": "string", "minLength": 1, "description": "Verbatim spoken HK Cantonese (口語), English kept in Latin script. Never written-Chinese subtitles." },
     "jyutping": { "type": ["string", "null"], "description": "Jyutping romanisation; English tokens passed through." },
-    "speaker_id": { "type": "string", "description": "Stable speaker id, prefixed by source, e.g. 'yt-ch06-spk01'. Use '<source>-unknown-<n>' if unknown." },
+    "speaker_id": { "type": "string", "description": "Stable speaker id, prefixed by source, e.g. 'yt-mm.millmilk-chucky'. Use '<source>-unknown-<n>' if unknown." },
     "accent": { "type": "string", "enum": ["zh-HK-native", "zh-HK-likely", "non-HK", "unknown"] },
     "style_tag": { "type": ["string", "null"], "description": "e.g. conversational_natural, read_studio, storytelling, formal_speech." },
     "emotion_tags": { "type": "array", "items": { "type": "string" }, "description": "Optional acoustic/emotion labels, e.g. calm, animated, questioning." },
