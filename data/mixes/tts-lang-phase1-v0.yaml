@@ -26,21 +26,21 @@ sources:
     filters: {}
   - source: cv-zh-hk
     manifest: "data_yue/manifests/cvhk_train.jsonl"
-    manifest_sha256: null
+    manifest_sha256: "d1f6f0e74e55b164c30332cf8bf406efd4b712b5b12562614f4a20df1fd72d0c"
     weight: 1.0
     hours_cap: null
     per_speaker_hours_cap: null
     filters: {}
   - source: mdcc
     manifest: "data_yue/manifests/mdcc_train.jsonl"
-    manifest_sha256: null
+    manifest_sha256: "65ee3830344d5bc41332e8e0323b66e6764d9b9f79e283a63fe618fed190f484"
     weight: 1.0
     hours_cap: null
     per_speaker_hours_cap: null
     filters: {}
   - source: mce
     manifest: "data_yue/manifests/mce_train.jsonl"
-    manifest_sha256: null
+    manifest_sha256: "cde369fe2c4f9d6afe046c73c1016e2079d82ab5addf817562e3767af306d7ae"
     weight: 1.0
     hours_cap: null
     per_speaker_hours_cap: null
