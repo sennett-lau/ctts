@@ -17,7 +17,7 @@ re-scoring the baselines.
 | Naturalness | Avoid read-speech stiffness | Automatic MOS predictor (e.g. UTMOS) | MOS listening test |
 | Speaker similarity | Zero-shot cloning must survive fine-tuning | Cosine similarity of speaker embeddings (e.g. WavLM-SV / ECAPA) between reference and output | |
 | Robustness | No early EOS, babbling or truncation | Rate of failed utterances (duration-ratio outliers, CER > 50%) | |
-| Speed | Real-time use in downstream voice apps | RTF, time-to-first-audio | |
+| Speed | Product use (Project Sunset) | RTF, time-to-first-audio | |
 
 ## Round-trip CER: avoiding judge bias
 

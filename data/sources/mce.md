@@ -17,7 +17,7 @@ last_updated: 2026-11-08
 `AlienKevin/mixed_cantonese_and_english_speech` (Hugging Face). TODO (P1): pin revision.
 
 ## Why it matters
-Technical tutoring mixes English terms into almost every sentence. This is the main
+Technical tutoring (Project Sunset) mixes English terms into almost every sentence. This is the main
 source for the `code_switch` behaviour and test category.
 
 ## Notes
