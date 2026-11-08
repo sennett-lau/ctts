@@ -59,7 +59,7 @@ similar files are git-ignored on purpose. Do not force-add them.
   A run without a card did not happen as far as the report is concerned.
 - **Copy configs** into `config/`. Do not link to a file that will change later.
 - **Capture the environment** into `env/`: git commit (and dirty flag), exact command line, `pip freeze`,
-  `nvidia-smi`, host name, CUDA/driver, seeds. `docs/methodology/logging-standard.md` has the full checklist.
+  `nvidia-smi`, host alias (never the real name), CUDA/driver, seeds (`scripts/capture-env.sh`). `docs/methodology/logging-standard.md` has the full checklist.
 - **Log negative results with the same care as positive ones.** "LoRA r=8 never lost the PRD accent" is a finding.
 - **Change one thing at a time** against a named parent experiment (`parent:` in the card), so
   the report can attribute every gain.
@@ -70,7 +70,7 @@ similar files are git-ignored on purpose. Do not force-add them.
 
 ## Code layout (to be created by the implementation agent)
 
-No implementation code exists yet. When you add it, use this layout unless an ADR changes it:
+Code is just starting (`src/ctts/eval/runtime_cpp.py`, the qwen3-tts.cpp wrapper). Use this layout unless an ADR changes it:
 
 ```text
 src/ctts/
