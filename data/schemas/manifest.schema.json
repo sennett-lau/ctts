@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/sennett-lau/ctts/data/schemas/manifest.schema.json",
+  "title": "CTTS canonical clip manifest row",
+  "description": "One JSONL line per clip. Model-agnostic contract between Layer 1 (corpus) and Layer 2 (per-model adapters). Schema version 0.1.0. Changes need an ADR and a version bump. Required fields come from blueprint section 2.3; the rest are optional provenance fields so that every row can be traced.",
+  "type": "object",
+  "required": ["id", "audio_24k_wav", "duration_s", "text_verbatim_hk", "speaker_id", "accent", "source", "split"],
+  "properties": {
+    "schema_version": { "type": "string", "const": "0.1.0" },
+    "id": { "type": "string", "description": "Globally unique, stable clip id, e.g. '<channel>_<video>_<seg>'." },
+    "audio_24k_wav": { "type": "string", "description": "Path to 24 kHz mono WAV, relative to the corpus root (never absolute)." },
+    "audio_16k_wav": { "type": ["string", "null"], "description": "Optional 16 kHz copy for ASR / SV judges." },
+    "audio_sha256": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" },
+    "duration_s": { "type": "number", "exclusiveMinimum": 0 },
+    "text_verbatim_hk": { "type": "string", "minLength": 1, "description": "Verbatim spoken HK Cantonese (口語), English kept in Latin script. Never written-Chinese subtitles." },
+    "jyutping": { "type": ["string", "null"], "description": "Jyutping romanisation; English tokens passed through." },
+    "speaker_id": { "type": "string", "description": "Stable speaker id, prefixed by source, e.g. 'yt-mm.millmilk-chucky'. Use '<source>-unknown-<n>' if unknown." },
+    "accent": { "type": "string", "enum": ["zh-HK-native", "zh-HK-likely", "non-HK", "unknown"] },
+    "style_tag": { "type": ["string", "null"], "description": "e.g. conversational_natural, read_studio, storytelling, formal_speech." },
+    "emotion_tags": { "type": "array", "items": { "type": "string" }, "description": "Optional acoustic/emotion labels, e.g. calm, animated, questioning." },
+    "snr_db": { "type": ["number", "null"] },
+    "source": { "type": "string", "description": "Slug of the data card in data/sources/." },
+    "split": { "type": "string", "enum": ["train", "dev", "test", "holdout"] },
+    "language_mix": { "type": ["string", "null"], "enum": ["yue", "yue+en", null], "description": "Whether the clip code-switches into English." },
+    "colloquial_score": { "type": ["number", "null"], "description": "HK colloquial density score of text_verbatim_hk." },
+    "labeling": {
+      "type": ["object", "null"],
+      "description": "Provenance of text_verbatim_hk.",
+      "properties": {
+        "method": { "type": "string", "enum": ["source_verbatim", "tri_label", "manual", "asr_only"] },
+        "bucket": { "type": ["string", "null"], "enum": ["sync", "sub", null] },
+        "winner": { "type": ["string", "null"], "enum": ["G", "Q", "S", "manual", null] },
+        "cer_g_q": { "type": ["number", "null"] },
+        "sim_g_s": { "type": ["number", "null"] },
+        "sim_q_s": { "type": ["number", "null"] },
+        "models": { "type": "object", "additionalProperties": { "type": "string" }, "description": "e.g. {\"G\": \"gemini-...@2026-10\", \"Q\": \"qwen3-asr-1.7b-hk-stage2@<rev>\"}" },
+        "build": { "type": ["string", "null"], "description": "Experiment id of the build that produced this row." }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}
