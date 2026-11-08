@@ -25,7 +25,7 @@ For a failed or aborted run, record everything up to the point of failure, plus 
 | `command.txt` | Exact command line(s), with working directory |
 | `git.txt` | `git rev-parse HEAD` for this repo **and** any trainer fork; `git status --porcelain` (dirty flag) |
 | `pip-freeze.txt` | `pip freeze` (or `uv pip freeze`), plus `python --version` |
-| `hardware.txt` | Host name, `nvidia-smi`, CUDA / driver / torch versions, GPU count, RAM |
+| `hardware.txt` | Host **alias** (never the real host name; ADR 0004), `nvidia-smi`, CUDA / driver / torch versions, GPU count, RAM |
 | `seeds.txt` | Every seed: python, numpy, torch, data shuffling |
 
 ## 4. During and after training (`logs/`)
