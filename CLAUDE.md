@@ -92,10 +92,11 @@ Principles:
 
 ## Compute
 
-Each run records its host. The likely GPU box is `sennett-pc` (RTX 3080 Ti, inside WSL). The
-global `~/.claude/CLAUDE.md` describes SSH access and its quoting and backgrounding traps. Large
-artefacts stay on the machine that produced them, or go to an external store (e.g. a private
-Hugging Face repo). The experiment card records the pointer.
+There are several hosts (ADR 0004). Each run records its host by **neutral alias**:
+`gpu-workstation-01` (corpus host, large memory), `sennett-pc` (RTX 3080 Ti 12 GB, WSL) or `colab-g4`.
+Never commit IP addresses, user names, SSH details or home-directory paths. Access details stay in each
+maintainer's private notes. Large artefacts stay on the machine that produced them, or go to a private
+Hugging Face repo. The experiment card records the pointer and the sha256.
 
 ## Git and GitHub
 
