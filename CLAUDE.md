@@ -103,6 +103,11 @@ Hugging Face repo. The experiment card records the pointer and the sha256.
 - Remote: `https://github.com/sennett-lau/ctts` (**public**). Use the GitHub account `sennett-lau`.
 - The repo is public. Never commit credentials, API keys, raw audio of real people, or full
   transcripts of third-party content whose licence does not allow redistribution (check the data card).
+- **Keep these in the git-ignored `private/` folder, not in tracked files:** internal source documents and
+  product plans (including internal product codenames), the alias → real-name map for YouTube channels
+  and speakers, host access details, real host names, IPs and home paths, and anyone's personal contact details.
+  Public files use aliases (`ch01`…, `gpu-workstation-01`). Claims about named third-party models must be measured here,
+  or labelled as unverified.
 - **Commit small and often.** Each commit holds one logical change with a short, conventional
   message (`docs:`, `data:`, `exp:`, `eval:`, `feat:`, `fix:`, `chore:`). Prefer several small
   commits over one large one.
