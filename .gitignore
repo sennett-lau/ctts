@@ -30,6 +30,9 @@
 !experiments/*/samples/*.mp3
 !report/figures/**
 
+# ---- Local-only notes (never committed) ----
+/private/
+
 # ---- Secrets ----
 .env
 .env.*
