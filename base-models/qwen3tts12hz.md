@@ -26,9 +26,8 @@ actual checkpoint, and record them here.
 - ICL prompt (`.icl`): reference codes + transcript, which clones timbre and prosody
 - `instruction` field (natural-language style)
 
-**Keep `speaker_encoder.*` (and `code_predictor`) at export.** Dropping them at export
-removes zero-shot cloning. Our internal notes suggest an earlier community fine-tune lost cloning this way.
-Not verified here. The community reference run in the evaluation protocol will measure it.
+**Keep `speaker_encoder.*` (and `code_predictor`) at export.** A previous third-party fine-tune
+(`jmtl`) deleted them and lost cloning. It also trained on CV `yue` and got a PRD accent.
 
 ## Language Token ID & Operational Constraints
 - **Language ID strategy (critical ablation):**

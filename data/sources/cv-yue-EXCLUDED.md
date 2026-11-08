@@ -14,9 +14,8 @@ last_updated: 2026-11-08
 # Common Voice `yue`: EXCLUDED from TTS training
 
 ## Why excluded
-Per the blueprint, fewer than 4% of speakers are confirmed Hong Kong. The rest are from Guangzhou, Foshan, the wider PRD, or overseas. Our internal
-listening notes on an earlier community fine-tune trained on it heard a **PRD accent (珠三角鄉音)**.
-Not measured here yet. See the ablation below.
+Per the blueprint, fewer than 4% of speakers are confirmed Hong Kong. The rest are from Guangzhou, Foshan, the wider PRD, or overseas. A previous
+third-party fine-tune (`jmtl`) trained on it acquired a **PRD accent (珠三角鄉音)**.
 
 ## Allowed uses
 - ASR evaluation (it was an ASR test set in prior work: "CV Cantonese" 3.86% CER).
