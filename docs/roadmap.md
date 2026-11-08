@@ -8,8 +8,8 @@ Status values: `todo` · `active` · `done` · `blocked` · `dropped`
 | Phase | Goal | Status | Evidence |
 |---|---|---|---|
 | P0 Setup | Repo structure, conventions, agent instructions | done | this commit history |
-| P1 Corpus v1 | Data cards for every source; canonical manifest built and validated; corpus stats | todo | `data/` |
-| P2 Eval harness | Frozen test set v1; metrics implemented; **baselines of the untouched base models** | todo | `evals/` |
+| P1 Corpus v1 | Data cards for every source; canonical manifest built and validated; corpus stats | active | HK YouTube stats + checksums verified (`data/sources/hk-youtube-conversational.md`); validator and other sources' stats pending |
+| P2 Eval harness | Frozen test set v1; metrics implemented; **baselines of the untouched base models** | active | `evals/test-sets/tts-test-v1/` frozen (35 prompts); harness and baselines pending |
 | P3 TTS language/accent adaptation | Phase 1 LoRA on Qwen3-TTS-12Hz-1.7B-Base, speaker encoder kept | todo | |
 | P4 Personas and emotion | Phase 2: named HK voices / `.icl` emotion bank; optional style-instruction tags | todo | |
 | P5 Portability check | Repeat P3 on a second base model (e.g. CosyVoice or Fish Speech) using only this repo | todo | |
