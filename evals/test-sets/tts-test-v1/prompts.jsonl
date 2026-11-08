@@ -8,7 +8,7 @@
 {"id": "prt-003", "category": "particles", "text": "車，咁少事就唔使特登走過嚟問我啦，你自己決定咪得囉！", "notes": "Exclamation 車 + 咪得囉"}
 {"id": "prt-004", "category": "particles", "text": "咦？乜你仲未食飯咩？不如我叫外賣順便叫埋你嗰份吖。", "notes": "Rising question 咦/咩 + 吖"}
 {"id": "prt-005", "category": "particles", "text": "嗱，今次算數啦，下次真係唔好再漏低銀包喺屋企喇喎！", "notes": "Discourse marker 嗱 + 喇喎"}
-{"id": "cs-001", "category": "code_switch", "text": "其實 Variational Autoencoder 最核心嘅概念呢，就係將張圖壓入去一個連續嘅 latent space 入面。", "notes": "Project Sunset ML tutor sentence"}
+{"id": "cs-001", "category": "code_switch", "text": "其實 Variational Autoencoder 最核心嘅概念呢，就係將張圖壓入去一個連續嘅 latent space 入面。", "notes": "ML tutoring sentence"}
 {"id": "cs-002", "category": "code_switch", "text": "你 push 之前記得先喺 local 跑一次 unit test 同埋 typecheck，費事一陣 CI 又爆紅。", "notes": "Software engineering code-switch"}
 {"id": "cs-003", "category": "code_switch", "text": "呢個 endpoint 已經做咗 streaming output，所以 time to first audio 可以壓到好低。", "notes": "Speech engineering code-switch"}
 {"id": "cs-004", "category": "code_switch", "text": "既然 office 有免費咖啡，at least 可以幫我每個禮拜慳返幾百蚊先啦。", "notes": "Everyday HK office code-switch"}

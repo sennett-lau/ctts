@@ -19,7 +19,7 @@ tracked files wholesale. When reality differs from them, write a decision record
 
 | In scope now | Later | Out of scope here |
 |---|---|---|
-| Layer 1 corpus records (data cards, manifest schema, mixes, pipeline write-ups) | Layer 3 voice/emotion API + UI (`voice-studio`) | The Project Sunset `VoiceProvider` adapter: that code belongs in the Project Sunset repo. Here we only document the contract it relies on. |
+| Layer 1 corpus records (data cards, manifest schema, mixes, pipeline write-ups) | Layer 3 voice/emotion API + UI (`voice-studio`) | Integration into downstream apps (e.g. a `VoiceProvider` adapter in a voice-tutor app): that code belongs in the app's own repo. Here we only document the contract it relies on. |
 | Layer 2 TTS adaptation (codec-AR family first: Qwen3-TTS-12Hz-1.7B-Base) | S2S / Omni adaptation (Qwen3-Omni, GLM-4-Voice, Moshi) | |
 | Evaluation harness and the frozen test set | | |
 | HK ASR as a **tool** (labelling, round-trip CER), not as the research target | | |
