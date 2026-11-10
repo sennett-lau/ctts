@@ -32,10 +32,14 @@ Channel-level list behind [hk-youtube-conversational](hk-youtube-conversational.
 | Price.com.hk 香港格價網 | https://www.youtube.com/@pricehongkongofficial | included | 7.55 / 282 | 959 / 131.94 | not checked | consumer tech reviews |
 | JFFLive 床哥心事台 highlights | fan highlight uploads (8 uploaders, not one channel) | included | 12.41 / 50 | not in dataset | – | call-in live stream, heavy slang |
 | The MultiTalk | https://www.youtube.com/@themultitalk | **candidate** | – | not in dataset | 488 videos / 385.6 h, 1 stream / 2.8 h | talk and podcast shows, multi-speaker |
-| FHProductionHK | https://www.youtube.com/@fhproductionhk | **candidate** | – | not in dataset | 535 videos / 89.5 h, 218 streams / 228.0 h | series, Q&A, music videos, live streams (not reviewed yet) |
+| FHProductionHK | https://www.youtube.com/@fhproductionhk | **candidate** | – | not in dataset | public: 418 videos / 80.3 h, 13 streams / 17.6 h (members-only: 117 videos / 9.1 h, 205 streams / 210.4 h) | multi-speaker sketches and variety series, some music videos |
 
 The MultiTalk shows by video count: Sporty Pop Con叻 51, 《吹水》 32, 收市閒情千頌C 32, SPOTITALK 31, Enter Enter 21,
 ROOM.33 20, Courtside With Emil 10, the rest fewer than 10. All its videos are 10 min or longer.
+
+FHProductionHK: members-only uploads cannot be downloaded, so only the public part counts. None of 6 sampled
+public videos had creator subtitles, so tri-label arbitration would have only two labels (or OCR of burned-in
+captions, as for the 床哥 highlights). Music videos need to be dropped and BGM / sound effects removed.
 
 ### Other OrcinusOrca channels, not used yet
 
