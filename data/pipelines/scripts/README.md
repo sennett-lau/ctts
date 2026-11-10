@@ -15,6 +15,8 @@ each script sits in `data_yue/` of the ASR corpus repo, writes next to itself, a
 | `yt_gemini_pilot.py` | 3 | Gemini Flash labels for OrcinusOrca segments (pilot; also holds the prompt and prices `yt_tri_label.py` reuses) |
 | `yt_tri_label.py` | 1–3 | `extract` (pick segments from OrcinusOrca tars), `gemini`, `qwen`, `merge` (arbitration) |
 | `yt_tri_chain.sh` | 1–3 | Runs the four `yt_tri_label.py` stages in order (Gemini and Qwen in parallel) |
+| `yt_dl_segment.py` | 1–2 | Route B for videos not in OrcinusOrca: `yt-dlp` audio + creator vtt, subtitle-cue segments (silence cuts when there are no subtitles), writes the `meta.jsonl` that `yt_tri_label.py gemini/qwen/merge` read via `YT_TRI_OUT` |
+| `yt_more2_chain.sh` | 1–3 | 2026-11-10 run: the 50 The Do Show videos not in OrcinusOrca → Route B → tri-label (Gemini cap US$6, Qwen-FT Stage 2) |
 | `chong_pipeline.py` | 1–3 | Route B: pick videos, `yt-dlp` audio + subtitles, silence cuts, Gemini pass 1 |
 | `qwen_label.py` | 3 | Independent Qwen3-ASR transcripts (forced Cantonese, no hints) to cross-check the Gemini labels |
 | `chong_failed_qwen.py` | 3 | Chunks Gemini returned nothing for: asks Gemini for the block reason, then transcribes them with Qwen3-ASR |

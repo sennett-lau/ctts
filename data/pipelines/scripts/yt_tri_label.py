@@ -25,6 +25,7 @@ Skips segments already labelled in yt_pilot/ and every video held out in manifes
 
 import argparse
 import json
+import os
 import random
 import re
 import sys
@@ -36,13 +37,16 @@ from pathlib import Path
 
 ROOT = Path(__file__).parent
 OO = ROOT / "raw_dl" / "OrcinusOrca__YouTube-Cantonese"
-OUT = ROOT / "yt_more"
-QFT = ROOT.parent / "qwen_ft" / "colab_out" / "final"
+OUT = Path(os.environ.get("YT_TRI_OUT", ROOT / "yt_more"))  # 2026-11-10: yt_more2 = Route B downloads (yt_dl_segment.py)
+QFT = Path(os.environ.get("YT_TRI_QFT", ROOT.parent / "qwen_ft" / "colab_out" / "final"))
 TARGET_H = {"ahju": 10, "bboblackboxoffice": 10, "mm.millmilk": 14, "pricehongkongofficial": 12, "unwire": 12,
             "mingjai14": 12, "thedoshow0909": 10}
 SYNC, MARGIN, COL_TOL, MIN_AGREE = 0.15, 0.05, 0.03, 0.6
 BAD_G = re.compile(r"(?i)the user|transcription|subtitle|verbatim|here is|字幕：")
 KANA = re.compile(r"[\u3040-\u30ff]")
+HANGUL = re.compile(r"[\uac00-\ud7af\u1100-\u11ff\u3130-\u318f]")
+EN_WORD = re.compile(r"[A-Za-z]+")
+MIN_HAN_SHARE = 0.25  # han chars / (han chars + English words) in G; below = English speech (code-switching stays above)
 MANDARIN = -0.03  # Gemini text with more written-only words than Cantonese markers (per char) -> probably Putonghua
 
 YUE = set("嘅咗喺佢冇啲嘢噉嚟哋唔係嗰咩乜啱嘞喎囉㗎吖嘛噃咪睇諗瞓攞畀俾搵揾晒咁嗌啖嚿冚攰揸嗮")
@@ -209,6 +213,12 @@ def colloquial(text, digit_penalty=0.5):
     return (n_yue - n_written) / n_han - (digit_penalty if re.search(r"\d", text) else 0.0)
 
 
+def han_share(text):
+    n_han = sum(1 for c in text if "\u3400" <= c <= "\u9fff")
+    n_en = len(EN_WORD.findall(text))
+    return n_han / (n_han + n_en) if n_han + n_en else 0.0
+
+
 def cmd_merge(a):
     sys.path.insert(0, str(ROOT.parent / "src"))
     import opencc
@@ -257,6 +267,8 @@ def cmd_merge(a):
         agree = max((ps(pick, o) for o in live if o != pick), default=0.0)
         reason = ("qwen_empty" if not cand["Q"] else "gemini_bad" if g_bad else
                   "japanese" if KANA.search(cand["Q"] + cand["G"]) else
+                  "korean" if HANGUL.search(cand["Q"] + cand["G"]) else
+                  "english" if han_share(cand["G"]) < MIN_HAN_SHARE else
                   "mandarin?" if colloquial(cand["G"], 0) < MANDARIN else  # Gemini writes verbatim: written text = Putonghua speech
                   "no_agreement" if agree < MIN_AGREE else "")
         status = "reject" if reason else "sync" if cer_qg <= SYNC else "sub"
