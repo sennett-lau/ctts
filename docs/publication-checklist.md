@@ -9,6 +9,7 @@ that should not ship.
 - [ ] `docs/initial/`: internal blueprint and agent brief (product plans, internal chat context). Move them out of the repo and leave a short note.
 - [ ] The internal product codename ("Project Sunset") in CLAUDE.md, ADR 0003, the evaluation protocol, the MCE card and the notes of test prompt `cs-001`.
 - [ ] Real YouTube channel names, per-channel hours and corpus paths in `data/sources/hk-youtube-conversational.md` and `data/mixes/tts-lang-phase1-v0.yaml`. Replace them with aliases (`ch01`…).
+- [ ] The same in `data/sources/README.md` (YouTube channel table with URLs), `data/pipelines/youtube-ingest.md` (channel status) and the prompts / channel lists inside `data/pipelines/scripts/`.
 - [ ] The call-in live-stream source: its callers are members of the public. Remove its name, and never publish its audio, transcripts or cloned voices.
 - [ ] `data/schemas/README.md` example row: it quotes a real creator's transcript and names a speaker. Replace it with a made-up row.
 - [ ] Unverified claims about named third-party models (e.g. `jmtl` in the base-model card and the CV `yue` card). Measure them or label them as unverified.
